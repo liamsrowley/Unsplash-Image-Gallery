@@ -19,6 +19,7 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
+  padding-bottom: 80px;
 }
 
 .page__title {
@@ -30,4 +31,17 @@ body {
   width: 64px;
   height: 64px;
   margin: auto;
+}
+
+.button {
+  display: inline-block;
+  width: 120px;
+  height: 48px;
+  border: none;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+.button .loader {
+  margin: 0 auto;
 }
