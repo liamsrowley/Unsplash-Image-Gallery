@@ -5,6 +5,7 @@ import unsplash from '../apis/unsplash';
 import Search from './Search/Search';
 import ImageList from './ImageList/ImageList';
 import PagePlaceholder from './PagePlaceholder/PagePlaceholder';
+import Loader from './Loader/Loader';
 
 import './App.css';
 
@@ -29,12 +30,15 @@ const App = () => {
   }
 
   const renderPageTitle = () => {
-    if (response.total && response.total !== 0) {
+    if (response.total && response.total !== 0 && !isLoading) {
       return <h2 className="page__title">Found {response.total} results for this search term</h2>
     }
   }
 
   const renderPageContent = () => {
+    if (isLoading) {
+      return <Loader className="loader--big"/>;
+    }
     if (response.results) {
       if (response.results.length === 0) {
         return <PagePlaceholder imageURL="/images/nodata.svg" message="Oops! We couldn't find any results for that search term" imageAlt="Clipboard with blank document" />
