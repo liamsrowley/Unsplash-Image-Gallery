@@ -1,0 +1,19 @@
+.loader {
+  height: 18px;
+  width: 18px;
+  display: block;
+  border: 3px solid #CBD5E0;
+  border-left: 3px solid #2D3748;
+  border-radius: 50%;
+  animation: rotate 0.6s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
