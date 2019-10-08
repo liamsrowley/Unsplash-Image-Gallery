@@ -1,7 +1,7 @@
 import React from 'react';
 import './ImageList.css';
 
-import Image from './Image';
+import Image from '../Image/Image';
 
 const ImageList = ({ images }) => {
 
