@@ -43,7 +43,6 @@ const App = () => {
       total_pages: data.total_pages,
       current_page: nextPage
     });
-    console.log(images);
   }
 
   const handleSubmit = async (query) => {
@@ -70,7 +69,7 @@ const App = () => {
       }
       return (
         <Fragment>
-          <ImageList images={images} isLoading={isLoading} />
+          <ImageList images={images} isLoading={isLoading} loadMoreImages={loadMoreImages} />
           <button className="button" onClick={loadMoreImages}>
             { isLoading && <Loader /> }
             { !isLoading && 'Load More' }

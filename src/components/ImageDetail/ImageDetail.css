@@ -1,0 +1,9 @@
+.image-detail__image {
+    height: 70vh;
+    border-radius: 3px;
+}
+
+.image-detail__description {
+  margin-top: 12px;
+  color: white;
+}
