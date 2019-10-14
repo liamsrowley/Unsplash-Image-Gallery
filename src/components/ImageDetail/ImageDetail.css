@@ -8,13 +8,14 @@
   max-width: 100%;
   width: auto;
   margin: 0 auto;
-  max-height: 90vh;
+  max-height: 80vh;
   border-radius: 3px;
 }
 
 .image-detail__description {
-  margin-top: 12px;
+  margin-top: 20px;
   color: white;
+  max-width: 1200px;
 }
 
 .image-detail__controls {
