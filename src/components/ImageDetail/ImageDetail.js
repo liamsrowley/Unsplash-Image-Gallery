@@ -12,8 +12,8 @@ const ImageDetail = ({ image, renderNextImage, renderPrevImage, closeActiveImage
         <p className="image-detail__description">{image.description}</p>
       </div>
       <div className="image-detail__controls">
-        <button onClick={closeActiveImage} className="control control--close"><IoIosClose /></button>
         <button onClick={renderPrevImage} className="control control--prev"><IoIosArrowBack /></button>
+        <button onClick={closeActiveImage} className="control control--close"><IoIosClose /></button>
         <button onClick={renderNextImage} className="control control--next"><IoIosArrowForward /></button>
       </div>
     </Modal>

@@ -74,10 +74,12 @@ const App = () => {
       return (
         <Fragment>
           <ImageList images={images} isLoading={isLoading} loadMoreImages={loadMoreImages} />
-          <button className="button" onClick={loadMoreImages}>
-            { isLoading && <Loader /> }
-            { !isLoading && 'Load More' }
-          </button>
+          { response.total_pages !== 1  && (
+            <button className="button" onClick={loadMoreImages}>
+              { isLoading && <Loader /> }
+              { !isLoading && 'Load More' }
+            </button>
+          )}
         </Fragment>
       )
     }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 75vw;
+  animation: slideUp 0.2s ease;
 }
 
 .image-detail__image {
@@ -21,39 +22,58 @@
 .image-detail__controls {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .control {
   background: #1A202C;
   border: none;
   color: #CBD5E0;
-  font-size: 2rem;
-  position: absolute;
+  font-size: 1.4rem;
   width: auto;
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
   border-radius: 3px;
-  padding: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+  padding: 16px 24px;
+  bottom: 8px;
+}
+
+.control.control--close {
+  border-radius: 0;
+}
+
+.control.control--prev {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.control.control--next {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .control:hover {
   background: black;
 }
 
-.control.control--next {
-  right: 80px;
+@media (min-width: 768px) {
+  .control {
+    padding: 20px 32px;
+  }
 }
 
-.control.control--prev {
-  left: 80px;
-}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
 
-.control.control--close {
-  top: 40px;
-  right: 80px;
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
