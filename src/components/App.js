@@ -18,6 +18,7 @@ const App = () => {
   const [images, setImages] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Fetch images from Unsplash based on provided params
   const fetchImages = async (query, page = 1, per_page = 20) => {
     setIsLoading(true);
 
@@ -34,6 +35,7 @@ const App = () => {
     return response.data;
   }
 
+  // Fetch the next set of results and add them to the images array
   const loadMoreImages = async () => {
     const nextPage = response.current_page + 1;
     const data = await fetchImages(query, nextPage);
@@ -45,6 +47,8 @@ const App = () => {
     });
   }
 
+  // Set the search query to whatever was typed into the search bar
+  // then fetch images from the API;
   const handleSubmit = async (query) => {
     setQuery(query);
     const data = await fetchImages(query);
@@ -85,7 +89,6 @@ const App = () => {
       <Search onSubmit={handleSubmit} isLoading={isLoading}/>
       { renderPageTitle() }
       { renderPageContent() }
-
     </div>
   );
 }

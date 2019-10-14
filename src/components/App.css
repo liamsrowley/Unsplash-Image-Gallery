@@ -37,13 +37,13 @@ body {
 
 .button {
   display: inline-block;
-  width: 120px;
-  height: 48px;
+  width: 140px;
+  height: 52px;
   border: none;
   border-radius: 3px;
-  background: #FEB2B2;
-  color: #742A2A;
-  font-weight: 600;
+  background: #68D391;
+  color: #22543D;
+  font-weight: 700;
 }
 
 .page > .button {

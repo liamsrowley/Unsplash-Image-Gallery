@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './ImageList.css';
+import React, { useState, useEffect } from 'react';
 
 import Image from '../Image/Image';
 import ImageDetail from '../ImageDetail/ImageDetail';
+import './ImageList.css';
 
 const ImageList = ({ images, loadMoreImages }) => {
 
@@ -39,6 +39,10 @@ const ImageList = ({ images, loadMoreImages }) => {
     }
   }
 
+  const closeActiveImage = () => {
+    setActiveImage(null);
+  }
+
   // Map through the images array and render them all in a list
   const renderImages = () => {
     if (images.length > 0) {
@@ -52,7 +56,7 @@ const ImageList = ({ images, loadMoreImages }) => {
   // Render image details if an image is active
   const renderActiveImage = () => {
     if (activeImage) {
-      return <ImageDetail image={activeImage} renderNextImage={renderNextImage} renderPrevImage={renderPrevImage} />;
+      return <ImageDetail image={activeImage} renderNextImage={renderNextImage} renderPrevImage={renderPrevImage} closeActiveImage={closeActiveImage} />;
     }
   }
 
